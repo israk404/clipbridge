@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.1 — 2026-11-06
+
+### Changed
+- New release signing key, kept in GitHub secrets instead of the repository (the repository is now public). **Uninstall the old app once before installing 2.0.1**, then pair again — later updates install over it as usual.
+- Automatic builds publish to the Releases page; an APK is also kept in `downloads/`.
+
 ## 2.0.0 — 2026-11-06
 
 ### Added

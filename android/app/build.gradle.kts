@@ -11,28 +11,32 @@ android {
         applicationId = "com.farhan.clipbridge"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "2.0"
+        versionCode = 3
+        versionName = "2.0.1"
     }
 
-    // One fixed key so every build can be installed over the previous one (no uninstall needed).
-    // It lives in the repo — fine for a personal app; keep the repo private.
+    // Release signing key comes from the environment (GitHub secrets in CI), never from the repo:
+    //   CLIPBRIDGE_KEYSTORE=path/to/release.keystore  CLIPBRIDGE_KEYSTORE_PASSWORD=...
+    // Without it, release builds are unsigned (fine for checking that the code compiles).
+    val keystorePath = System.getenv("CLIPBRIDGE_KEYSTORE")
+    val keystorePassword = System.getenv("CLIPBRIDGE_KEYSTORE_PASSWORD")
+    val canSign = !keystorePath.isNullOrEmpty() && !keystorePassword.isNullOrEmpty() && file(keystorePath).exists()
+
     signingConfigs {
-        create("shared") {
-            storeFile = file("clipbridge.keystore")
-            storePassword = "clipbridge"
-            keyAlias = "clipbridge"
-            keyPassword = "clipbridge"
+        if (canSign) {
+            create("release") {
+                storeFile = file(keystorePath!!)
+                storePassword = keystorePassword
+                keyAlias = System.getenv("CLIPBRIDGE_KEY_ALIAS") ?: "clipbridge"
+                keyPassword = keystorePassword
+            }
         }
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            signingConfig = signingConfigs.getByName("shared")
-        }
-        debug {
-            signingConfig = signingConfigs.getByName("shared")
+            if (canSign) signingConfig = signingConfigs.getByName("release")
         }
     }
 

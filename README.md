@@ -10,9 +10,10 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/israk404/clipbridge/actions/workflows/build.yml"><img src="https://github.com/israk404/clipbridge/actions/workflows/build.yml/badge.svg" alt="Build"></a>
   <img src="https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white" alt="Android 8.0+">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows&logoColor=white" alt="Windows 10 | 11">
-  <img src="https://img.shields.io/badge/version-2.0.0-4F46E5" alt="Version 2.0.0">
+  <img src="https://img.shields.io/badge/version-2.0.1-4F46E5" alt="Version 2.0.1">
 </p>
 
 ---
@@ -21,10 +22,10 @@
 
 | Device | Get it |
 |---|---|
-| Android phone | **[ClipBridge.apk](downloads/ClipBridge.apk?raw=true)** — open it on the phone to install or update ([details](downloads/README.md)) |
-| Windows PC | Double-click **`windows\build_exe.bat`** to build `ClipBridge.exe` (needs Python 3.10+), or **`windows\run.bat`** to run it directly |
+| Android phone | **ClipBridge.apk** from [Releases → latest](https://github.com/israk404/clipbridge/releases/latest) (also in [`downloads/`](downloads/)) |
+| Windows PC | **ClipBridge.exe** from [Releases → latest](https://github.com/israk404/clipbridge/releases/latest) |
 
-When GitHub Actions is enabled for this account, every push to `main` also builds both files and publishes them on the [Releases page](https://github.com/israk404/clipbridge/releases/latest). New versions install over old ones — no need to uninstall or pair again.
+Both are built automatically from this repository on every push to `main`. New versions install over old ones and keep your pairing.
 
 ## Features
 
@@ -83,8 +84,7 @@ clipbridge/
 │   ├── app/
 │   │   ├── src/main/java/…      source code
 │   │   ├── src/main/res/        icons, themes
-│   │   ├── build.gradle.kts
-│   │   └── clipbridge.keystore  signing key (keeps updates installable)
+│   │   └── build.gradle.kts     (signing key comes from GitHub secrets)
 │   └── protocol-test/           runs the phone's network code against the real PC app
 ├── windows/                     Windows app (Python 3.10+, PySide6)
 │   ├── clipbridge/              source code

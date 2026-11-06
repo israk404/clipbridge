@@ -1,11 +1,12 @@
 # Downloads
 
-| File | Version | Size | For |
-|---|---|---|---|
-| [ClipBridge.apk](ClipBridge.apk?raw=true) | 2.0.0 (build 2) | 724 KB | Android 8.0 or newer |
+| File | Version | For |
+|---|---|---|
+| [ClipBridge.apk](ClipBridge.apk?raw=true) | 2.0.1 (build 3) | Android 8.0 or newer |
 
-SHA-256 of `ClipBridge.apk`: `88e38cc0a4274b723a560860b2c1fd3713e05c87d4f58ebbea7faa774cd8ea3f`
+- SHA-256 of the file: `c616fa3523f15270729652ee163e1154a8b2218c9d8c37a218cd9960d68cc8b4`
+- Signing certificate SHA-256: `0B:E8:E3:9A:2C:8F:90:07:AF:9D:D0:1A:52:4C:97:80:2E:5D:81:BE:11:8A:B3:2B:AD:CE:7D:89:33:E2:AC:E6`
 
-**Windows:** `ClipBridge.exe` has to be built on Windows — double-click `windows\build_exe.bat` (needs Python 3.10+). Once GitHub Actions is enabled for this account, every push also builds both files and attaches them to the [Releases page](https://github.com/israk404/clipbridge/releases/latest).
+The newest **ClipBridge.apk** and **ClipBridge.exe** are always on the [Releases page](https://github.com/israk404/clipbridge/releases/latest), built automatically from `main`.
 
-Installing a new APK over an old one keeps your pairing and history.
+> Coming from 2.0.0 or earlier? Uninstall the old app once (the signing key changed), install this one and pair again. Future updates install over it.

@@ -4,10 +4,9 @@
 
 ## 1. Get the apps
 
-- **Phone:** download [`downloads/ClipBridge.apk`](../downloads/ClipBridge.apk?raw=true).
-- **PC:** install Python 3.10+ from python.org (tick **Add python.exe to PATH**), then double-click `windows\build_exe.bat`. After a couple of minutes you get `windows\dist\ClipBridge.exe`. Or double-click `windows\run.bat` to run it without making an exe. See [windows/README.md](../windows/README.md).
+Download **ClipBridge.apk** (phone) and **ClipBridge.exe** (PC) from the [Releases page](https://github.com/israk404/clipbridge/releases/latest).
 
-When GitHub Actions is enabled for this account, both files are also built automatically and published on the [Releases page](https://github.com/israk404/clipbridge/releases/latest).
+Prefer to run the PC app from source? Install Python 3.10+ from python.org (tick **Add python.exe to PATH**) and double-click `windows\run.bat`, or `windows\build_exe.bat` to make your own exe. See [windows/README.md](../windows/README.md).
 
 ## 2. Install
 

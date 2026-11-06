@@ -16,7 +16,16 @@ Or open the `android` folder in Android Studio.
 
 ### Signing
 
-`app/clipbridge.keystore` signs every build with the same key, so each new APK installs over the previous one without uninstalling. Keep this repository private — anyone with the key could sign an "update" of the app.
+Release builds are signed with a key that is **not** stored in this repository. In CI it comes from two repository secrets:
+
+| Secret | Value |
+|---|---|
+| `ANDROID_KEYSTORE_BASE64` | the release keystore, base64-encoded |
+| `ANDROID_KEYSTORE_PASSWORD` | its password (store and key use the same one) |
+
+Locally, set `CLIPBRIDGE_KEYSTORE` (path to the keystore) and `CLIPBRIDGE_KEYSTORE_PASSWORD` before `gradle assembleRelease`. Without them the release APK is built unsigned. Every published APK must be signed with the same key, otherwise Android refuses to install it as an update.
+
+Certificate SHA-256: `0B:E8:E3:9A:2C:8F:90:07:AF:9D:D0:1A:52:4C:97:80:2E:5D:81:BE:11:8A:B3:2B:AD:CE:7D:89:33:E2:AC:E6`
 
 ## Protocol test
 
