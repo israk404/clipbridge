@@ -95,7 +95,7 @@ clipbridge/
 │   └── run.bat                  run from source
 ├── docs/                        guides, screenshots, logo
 ├── downloads/                   ready-to-use ClipBridge.apk and ClipBridge-Windows.zip
-└── .github/workflows/build.yml  CI: tests → APK + Windows package → Releases
+└── .github/workflows/build.yml  manual CI: tests → APK + Windows package → Releases
 ```
 
 ## Privacy & security

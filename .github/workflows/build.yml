@@ -1,9 +1,8 @@
 name: Build
 
+# Manual only: start it from the Actions tab → Build → Run workflow.
+# (Automatic runs on push are off while GitHub Actions is unavailable on this account.)
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -86,7 +85,7 @@ jobs:
   release:
     name: Publish to Releases
     needs: [test-windows-app, android, windows]
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

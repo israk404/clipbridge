@@ -4,7 +4,7 @@ Kotlin app using only Android framework APIs (no AndroidX or third-party librari
 
 ## Build
 
-The GitHub workflow builds a signed `ClipBridge.apk` on every push. To build locally you need JDK 17, the Android SDK and Gradle 8.9+:
+The GitHub workflow (run it from the Actions tab) builds a signed `ClipBridge.apk`. To build locally you need JDK 17, the Android SDK and Gradle 8.9+:
 
 ```bash
 cd android
