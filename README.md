@@ -10,7 +10,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/israk404/clipbridge/actions/workflows/build.yml"><img src="https://github.com/israk404/clipbridge/actions/workflows/build.yml/badge.svg" alt="Build"></a>
   <img src="https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white" alt="Android 8.0+">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows&logoColor=white" alt="Windows 10 | 11">
   <img src="https://img.shields.io/badge/version-2.0.1-4F46E5" alt="Version 2.0.1">
