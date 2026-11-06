@@ -67,23 +67,21 @@ jobs:
           path: ClipBridge.apk
 
   windows:
-    name: Build Windows EXE
-    runs-on: windows-latest
+    name: Build Windows package
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build
-        working-directory: windows
+      - name: Build ClipBridge-Windows.zip
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt pyinstaller
-          pyinstaller --noconfirm --onefile --windowed --name ClipBridge --icon assets/clipbridge.ico ClipBridge.pyw
+          pip install ziglang
+          python windows/build_portable.py --out dist
       - uses: actions/upload-artifact@v4
         with:
           name: ClipBridge-windows
-          path: windows/dist/ClipBridge.exe
+          path: dist/ClipBridge-Windows.zip
 
   release:
     name: Publish to Releases
@@ -107,7 +105,7 @@ jobs:
           | Device | Download |
           |---|---|
           | Android phone | **ClipBridge.apk** — open it on the phone to install or update |
-          | Windows PC | **ClipBridge.exe** — run it; to update, replace the old file |
+          | Windows PC | **ClipBridge-Windows.zip** — extract it and run ClipBridge.exe (nothing to install) |
 
           Setup guide: [docs/SETUP.md](https://github.com/${GITHUB_REPOSITORY}/blob/main/docs/SETUP.md) · What's new: [CHANGELOG.md](https://github.com/${GITHUB_REPOSITORY}/blob/main/CHANGELOG.md)
           NOTES

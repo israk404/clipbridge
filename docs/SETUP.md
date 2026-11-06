@@ -4,15 +4,17 @@
 
 ## 1. Get the apps
 
-Download **ClipBridge.apk** (phone) and **ClipBridge.exe** (PC) from the [Releases page](https://github.com/israk404/clipbridge/releases/latest).
+From the repository's [downloads](../downloads/) folder:
+- **Phone:** `ClipBridge.apk`
+- **PC:** `ClipBridge-Windows.zip` — portable, with its own Python runtime, so nothing else to install.
 
-Prefer to run the PC app from source? Install Python 3.10+ from python.org (tick **Add python.exe to PATH**) and double-click `windows\run.bat`, or `windows\build_exe.bat` to make your own exe. See [windows/README.md](../windows/README.md).
+Prefer to run the PC app from source? Install Python 3.10+ (tick **Add python.exe to PATH**) and double-click `windows\run.bat`. See [windows/README.md](../windows/README.md).
 
 ## 2. Install
 
 **Phone** — open `ClipBridge.apk`, allow *Install unknown apps* for your browser or Files app when asked, then tap **Install**. Play Protect may warn because the app isn't from the Play Store — choose **Install anyway**.
 
-**PC** — put `ClipBridge.exe` somewhere permanent (for example `Documents\ClipBridge`) and run it. If SmartScreen says *Windows protected your PC*, click **More info → Run anyway**.
+**PC** — right-click `ClipBridge-Windows.zip` → **Extract All…**, move the `ClipBridge` folder somewhere permanent (for example `Documents\ClipBridge`), and run **ClipBridge.exe** inside it. If SmartScreen says *Windows protected your PC*, click **More info → Run anyway**. Windows Firewall may list the app as *pythonw.exe* — that's ClipBridge's built-in runtime.
 
 ## 3. Connect them (one time)
 

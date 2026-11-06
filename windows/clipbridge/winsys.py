@@ -80,6 +80,9 @@ _RUN_NAME = "ClipBridge"
 
 
 def _launch_command() -> str:
+    launcher = os.environ.get("CLIPBRIDGE_LAUNCHER")  # set by the portable package's ClipBridge.exe
+    if launcher and os.path.exists(launcher):
+        return f'"{launcher}" --tray'
     if getattr(sys, "frozen", False):
         return f'"{sys.executable}" --tray'
     exe = sys.executable

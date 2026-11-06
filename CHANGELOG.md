@@ -4,7 +4,8 @@
 
 ### Changed
 - New release signing key, kept in GitHub secrets instead of the repository (the repository is now public). **Uninstall the old app once before installing 2.0.1**, then pair again — later updates install over it as usual.
-- Automatic builds publish to the Releases page; an APK is also kept in `downloads/`.
+- Windows app now ships as a portable package (`ClipBridge-Windows.zip`) with its own runtime and a real `ClipBridge.exe` — nothing to install. Built by `windows/build_portable.py` on any OS.
+- Ready-to-use files live in `downloads/`; CI also publishes them to Releases when Actions is available.
 
 ## 2.0.0 — 2026-11-06
 

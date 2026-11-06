@@ -22,10 +22,10 @@
 
 | Device | Get it |
 |---|---|
-| Android phone | **ClipBridge.apk** from [Releases → latest](https://github.com/israk404/clipbridge/releases/latest) (also in [`downloads/`](downloads/)) |
-| Windows PC | **ClipBridge.exe** from [Releases → latest](https://github.com/israk404/clipbridge/releases/latest) |
+| Android phone | **[ClipBridge.apk](downloads/ClipBridge.apk?raw=true)** — open it on the phone to install |
+| Windows PC | **[ClipBridge-Windows.zip](downloads/ClipBridge-Windows.zip?raw=true)** — extract it and run **ClipBridge.exe** (nothing else to install) |
 
-Both are built automatically from this repository on every push to `main`. New versions install over old ones and keep your pairing.
+Checksums and details: [downloads/](downloads/). New versions install over old ones and keep your pairing.
 
 ## Features
 
@@ -57,7 +57,7 @@ Plus: one-tap **Open** for links, progress bars with **Cancel** for big transfer
 
 ## Quick start
 
-1. Install **ClipBridge.apk** on the phone and run **ClipBridge.exe** on the PC.
+1. Install **ClipBridge.apk** on the phone; extract **ClipBridge-Windows.zip** on the PC and run **ClipBridge.exe**.
 2. Put both on the **same Wi-Fi**, and in Windows set that network to **Private**.
 3. On the PC click **Pair phone**; on the phone tap **Find my PC**.
 4. Check both screens show the same 6-digit code → click **Allow** on the PC.
@@ -88,13 +88,15 @@ clipbridge/
 │   └── protocol-test/           runs the phone's network code against the real PC app
 ├── windows/                     Windows app (Python 3.10+, PySide6)
 │   ├── clipbridge/              source code
+│   ├── launcher/                ClipBridge.exe launcher (C) for the portable package
 │   ├── tests/                   end-to-end tests + screenshot generator
 │   ├── assets/                  app icon
-│   ├── build_exe.bat            build ClipBridge.exe locally
+│   ├── build_portable.py        builds ClipBridge-Windows.zip on any OS
+│   ├── build_exe.bat            single-file exe with PyInstaller (on Windows)
 │   └── run.bat                  run from source
 ├── docs/                        guides, screenshots, logo
-├── downloads/                   ready-to-install ClipBridge.apk
-└── .github/workflows/build.yml  CI: tests → APK + EXE → Releases
+├── downloads/                   ready-to-use ClipBridge.apk and ClipBridge-Windows.zip
+└── .github/workflows/build.yml  CI: tests → APK + Windows package → Releases
 ```
 
 ## Privacy & security

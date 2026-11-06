@@ -19,13 +19,22 @@ py -3 -m venv .venv
 .venv\Scripts\pythonw ClipBridge.pyw
 ```
 
-## Build ClipBridge.exe
+## Build the portable package (any OS)
+
+```bash
+pip install ziglang
+python windows/build_portable.py
+```
+
+Output: `windows/dist/ClipBridge-Windows.zip` — `ClipBridge.exe` (a small launcher compiled from `launcher/launcher.c`), the app, and a pruned Python 3.12 + PySide6 runtime for 64-bit Windows. Works on Linux, macOS or Windows; nothing needs to be installed on the target PC.
+
+## Build a single-file exe (on Windows)
 
 ```bat
 windows\build_exe.bat
 ```
 
-Output: `windows\dist\ClipBridge.exe` (single file, no Python needed). The GitHub workflow builds the same file on every push and attaches it to the latest release.
+Output: `windows\dist\ClipBridge.exe` via PyInstaller.
 
 ## Tests
 
@@ -52,5 +61,7 @@ python tests/make_screenshots.py     # regenerates docs/screenshots
 | `clipbridge/theme.py`, `media.py` | Colors, painted icons, image helpers |
 | `clipbridge/winsys.py` | Global hotkey, start with Windows, firewall rule |
 | `assets/clipbridge.ico` | App icon |
+| `launcher/` | Source of the portable package's `ClipBridge.exe` |
+| `build_portable.py` | Builds `ClipBridge-Windows.zip` |
 
 Settings and history live in `%APPDATA%\ClipBridge`; received files go to `Downloads\ClipBridge` by default.
